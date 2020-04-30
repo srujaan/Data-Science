@@ -29,5 +29,12 @@ searchQuery = spotifyObject.search(q='Taylor Swift', type='artist')
 
 #print(json.dumps(searchQuery, sort_keys=True, indent=4))
 #recenly_played = spotifyObject.current_user_recently_played(limit=50,after=None,before=None)
-saved_tracks = spotifyObject.current_user_saved_tracks(limit=20,offset=0)
-print(json.dumps(saved_tracks, sort_keys=True, indent=4))
+saved_tracks = spotifyObject.current_user_saved_tracks(limit=50,offset=0)
+print()
+print("SONG'S NAME" + ' - ' + "SONG'S POPULARITY")
+print('*' * 25)
+for item in saved_tracks['items']:
+    track = item['track']
+    print(track['name']  + ' - ' +  str(track['popularity']))
+
+#print(json.dumps(saved_tracks, sort_keys=True, indent=4))
