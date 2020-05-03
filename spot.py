@@ -57,6 +57,8 @@ while True:
         offset += 100
     else:
         break
+with open('{}-{}'.format(username, pl_id), 'w') as outfile:
+        json.dump(songs, outfile)
 
 for i in songs:
     ids.append(i['track']['name'])
